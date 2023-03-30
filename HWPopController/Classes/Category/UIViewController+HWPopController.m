@@ -128,7 +128,8 @@ static inline BOOL HW_FLOAT_VALUE_IS_ZERO(CGFloat value) {
 }
 
 - (void)setPopController:(HWPopController *)popController {
-	objc_setAssociatedObject(self, @selector(popController), popController, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject_weak(self, @selector(popController), popController);
+	//objc_setAssociatedObject(self, @selector(popController), popController, OBJC_ASSOCIATION_ASSIGN);
 }
 
 
